@@ -8,7 +8,7 @@ Litecoin Development Kit (LDK) is a library that allows you to seamlessly build 
 Learn the simplest way to integrate Bitcoin wallet features into any application at [bitcoindevkit.org](https://bitcoindevkit.org/). -->
 
 ### 🔨 Contributing to the ecosystem
-Our team maintains [LDK](https://github.com/bitcoindevkit/ldk) which is the core library, while also maintaining a number of other related open source projects like:
+Our team maintains [LDK](https://github.com/litecoindevkit/ldk) which is the core library, while also maintaining a number of other related open source projects like:
  - [LDK CLI](https://github.com/litecoindevkit/ldk-cli) - A CLI wallet library and REPL tool to demo and test the LDK library
  - [LDK FFI](https://github.com/litecoindevkit/ldk-ffi) - A foreign language bindings generator for LDK (experimental)
  - [BDK Documentation](https://bitcoindevkit.org/) - Our open source documentation
