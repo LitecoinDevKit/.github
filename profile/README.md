@@ -2,6 +2,27 @@
 
 Descriptor-based Litecoin wallet libraries — a port of [Bitcoin Dev Kit](https://bitcoindevkit.org) with MimbleWimble Extension Blocks (MWEB).
 
+## Get started
+
+**Wallet teams:** start with the [Adoption guide](https://github.com/LitecoinDevKit/bdk/blob/litecoin/docs/ADOPTION.md) (Rust vs FFI, tip + LIP architecture, blessed pins, maps-first MWEB API).
+
+- Leaving embedded `mwebd`? → [Migrate from mwebd](https://github.com/LitecoinDevKit/bdk/blob/litecoin/docs/MIGRATE_FROM_MWEBD.md) **first**
+- Prove the guide on a clean clone → [Dogfood checklist](https://github.com/LitecoinDevKit/bdk/blob/litecoin/docs/DOGFOOD_CHECKLIST.md)
+- Port internals / alias strategy → [`PORTING.md`](https://github.com/LitecoinDevKit/bdk/blob/litecoin/PORTING.md)
+
+Blessed consumer pin (source of truth in the Adoption guide):
+
+```swift
+// Swift — exact pin for pre-release tags
+.package(url: "https://github.com/LitecoinDevKit/ltc-swift", exact: "3.1.0-litecoin.2")
+```
+
+```bash
+# Android AAR (file dependency; Maven Central not required)
+curl -fL -o bdk-ltc-android.aar \
+  https://github.com/LitecoinDevKit/bdk-ffi/releases/download/3.1.0-litecoin.1/bdk-ltc-android.aar
+```
+
 ## Libraries
 
 | Repo | Branch | What it is |
@@ -15,7 +36,7 @@ Descriptor-based Litecoin wallet libraries — a port of [Bitcoin Dev Kit](https
 
 | Repo | Notes |
 |------|--------|
-| [`ltc-wallet-mac`](https://github.com/LitecoinDevKit/ltc-wallet-mac) | Native macOS/Linux wallet (Tauri) |
+| [`ltc-wallet-mac`](https://github.com/LitecoinDevKit/ltc-wallet-mac) | Native macOS/Linux wallet (Tauri) — Rust product reference |
 | [`ltc-wallet-ios`](https://github.com/LitecoinDevKit/ltc-wallet-ios) | iOS/macOS smoke app over UniFFI |
 | [`ltc-wallet-android`](https://github.com/LitecoinDevKit/ltc-wallet-android) | Android smoke app over the AAR |
 
@@ -24,16 +45,3 @@ Descriptor-based Litecoin wallet libraries — a port of [Bitcoin Dev Kit](https
 Rev-pinned git deps (not crates.io): [`rust-litecoin`](https://github.com/LitecoinDevKit/rust-litecoin), [`rust-miniscript`](https://github.com/LitecoinDevKit/rust-miniscript), [`rust-electrum-client`](https://github.com/LitecoinDevKit/rust-electrum-client).
 
 Cross-repo pins are git SHAs in each `Cargo.toml` (with a coherence check in `bdk-ffi`). Bump order: `bdk` → `bdk_wallet` → consumers.
-
-## Get started
-
-```bash
-# Swift
-.package(url: "https://github.com/LitecoinDevKit/ltc-swift", exact: "3.1.0-litecoin.2")
-
-# Android AAR
-curl -fL -o bdk-ltc-android.aar \
-  https://github.com/LitecoinDevKit/bdk-ffi/releases/download/3.1.0-litecoin.1/bdk-ltc-android.aar
-```
-
-See [`bdk/PORTING.md`](https://github.com/LitecoinDevKit/bdk/blob/litecoin/PORTING.md) for the port strategy and topology.
